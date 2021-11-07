@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.4.4)
+  - MBProgressHUD (1.2.0)
+  - ReachabilitySwift (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - MBProgressHUD
+  - ReachabilitySwift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - MBProgressHUD
+    - ReachabilitySwift
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+
+PODFILE CHECKSUM: fcb0fb33c7cd4f567ad5463f13d8260fa37c5a11
+
+COCOAPODS: 1.11.2
