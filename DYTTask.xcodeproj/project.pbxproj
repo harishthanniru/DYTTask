@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1857D69327350576001C2416 /* CircleProfressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1857D69227350576001C2416 /* CircleProfressView.swift */; };
+		188A9CD3273D17A20022A619 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 188A9CD2273D17A20022A619 /* video1.mp4 */; };
 		1890FE082732B77A004D80D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FE072732B77A004D80D8 /* AppDelegate.swift */; };
 		1890FE0A2732B77A004D80D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FE092732B77A004D80D8 /* SceneDelegate.swift */; };
 		1890FE0C2732B77A004D80D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FE0B2732B77A004D80D8 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		1857D69227350576001C2416 /* CircleProfressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProfressView.swift; sourceTree = "<group>"; };
+		188A9CD2273D17A20022A619 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
 		1890FE042732B77A004D80D8 /* DYTTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYTTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1890FE072732B77A004D80D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1890FE092732B77A004D80D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				1857D69827350814001C2416 /* Controllers */,
 				1857D69927350822001C2416 /* StoryBoard */,
 				1890FE102732B782004D80D8 /* Assets.xcassets */,
+				188A9CD2273D17A20022A619 /* video1.mp4 */,
 				1890FE122732B782004D80D8 /* LaunchScreen.storyboard */,
 				1890FE152732B782004D80D8 /* Info.plist */,
 			);
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1890FE142732B782004D80D8 /* LaunchScreen.storyboard in Resources */,
+				188A9CD3273D17A20022A619 /* video1.mp4 in Resources */,
 				1890FE112732B782004D80D8 /* Assets.xcassets in Resources */,
 				1890FE0F2732B77A004D80D8 /* Main.storyboard in Resources */,
 			);
@@ -420,9 +424,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DYTTask/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "requires to access to write your photo to Photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "requires to access to write your photo to Photo library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -448,9 +455,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DYTTask/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "requires to access to write your photo to Photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "requires to access to write your photo to Photo library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

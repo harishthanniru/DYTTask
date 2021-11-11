@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        self.imgView.image = UIImage(named: "img")
+        self.imgView.image = UIImage(named: "img")
         self.progressView.isHidden = true
         configureUI()
         NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
@@ -31,22 +31,22 @@ class ViewController: UIViewController {
     
     
     @IBAction private func openGallery(_ sender:UIButton){
-        
-        self.openGalleryAlert { (strng) in
-            if strng == "Camera"{
-                self.imagePicker.delegate = self
-                self.imagePicker.sourceType = .camera
-                self.imagePicker.allowsEditing = true
-                self.imagePicker.modalPresentationStyle = .fullScreen
-                self.present(self.imagePicker, animated: true, completion: nil)
-            }else{
-                self.imagePicker.delegate = self
-                self.imagePicker.sourceType = .photoLibrary
-                self.imagePicker.allowsEditing = true
-                self.imagePicker.modalPresentationStyle = .fullScreen
-                self.present(self.imagePicker, animated: true, completion: nil)
-            }
-        }
+        uploadFile(img: self.imgView.image!)
+//        self.openGalleryAlert { (strng) in
+//            if strng == "Camera"{
+//                self.imagePicker.delegate = self
+//                self.imagePicker.sourceType = .camera
+//                self.imagePicker.allowsEditing = true
+//                self.imagePicker.modalPresentationStyle = .fullScreen
+//                self.present(self.imagePicker, animated: true, completion: nil)
+//            }else{
+//                self.imagePicker.delegate = self
+//                self.imagePicker.sourceType = .photoLibrary
+//                self.imagePicker.allowsEditing = true
+//                self.imagePicker.modalPresentationStyle = .fullScreen
+//                self.present(self.imagePicker, animated: true, completion: nil)
+//            }
+//        }
     }
     @objc func appMovedToBackground(){
         print("backgroundMode")
@@ -70,8 +70,12 @@ class ViewController: UIViewController {
     
     
     private func uploadFile(img:UIImage){
-        
-        ServiceManager.shared.uploadPhoto("https://k11api.fansedge.in/backOffice/upload/", image: img, params: [:]) { data, error, progress in
+        guard let path = Bundle.main.path(forResource: "video1", ofType:"mp4") else {
+            return
+        }
+        let data = path.data(using: .utf8)
+        print("dataaaaa",data)
+        ServiceManager.shared.uploadVideo("https://k11api.fansedge.in/backOffice/upload/", video: data!, params: [:]) { data, error, progress in
             switch error {
             case .technicalError:
                 self.showAlert(title: "Oops", message: error.label) {}

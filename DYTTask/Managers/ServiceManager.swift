@@ -32,6 +32,32 @@ class ServiceManager {
     
     static var shared = ServiceManager()
    
+    func uploadVideo(_ url: String, video: Data, params: [String : Any],completionHandler: @escaping (String, ApiError,Float) -> ()) {
+    let urlwithPercentEscapes = url.addingPercentEncoding( withAllowedCharacters: CharacterSet.urlQueryAllowed)
+    // let httpHeaders = HTTPHeaders(header)
+        GlobalVariables.shared.request = AF.upload(multipartFormData: { multiPart in
+         for p in params {
+             multiPart.append("\(p.value)".data(using: String.Encoding.utf8)!, withName: p.key)
+         }
+        multiPart.append(video, withName: "file", fileName: "file", mimeType: "mp4")
+     }, to: urlwithPercentEscapes!, method: .post) .uploadProgress(queue: .main, closure: { progress in
+         print("Upload Progress: \(progress.fractionCompleted)")
+         completionHandler("",.noError,Float(progress.fractionCompleted))
+     }).responseJSON(completionHandler: { data in
+         print("upload finished: \(data)")
+         completionHandler("success",.noError,1)
+     }).response { (response) in
+         switch response.result {
+         case .success(let resut):
+             print("upload success result: \(resut)")
+             
+         case .failure(let err):
+             print("upload err: \(err)")
+             completionHandler("",.technicalError,0)
+         }
+     }
+
+  }
     func uploadPhoto(_ url: String, image: UIImage, params: [String : Any],completionHandler: @escaping (String, ApiError,Float) -> ()) {
     let urlwithPercentEscapes = url.addingPercentEncoding( withAllowedCharacters: CharacterSet.urlQueryAllowed)
     // let httpHeaders = HTTPHeaders(header)
