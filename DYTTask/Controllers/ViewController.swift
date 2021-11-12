@@ -70,12 +70,12 @@ class ViewController: UIViewController {
     
     
     private func uploadFile(img:UIImage){
-        guard let path = Bundle.main.path(forResource: "video1", ofType:"mp4") else {
-            return
-        }
-        let data = path.data(using: .utf8)
-        print("dataaaaa",data)
-        ServiceManager.shared.uploadVideo("https://k11api.fansedge.in/backOffice/upload/", video: data!, params: [:]) { data, error, progress in
+//        guard let path = Bundle.main.path(forResource: "video1", ofType:"mp4") else {
+//            return
+//        }
+//        let data = path.data(using: .utf8)
+//        print("dataaaaa",data)
+        ServiceManager.shared.uploadPhoto("https://k11api.fansedge.in/backOffice/upload/", image: img, params: [:]) { data, error, progress in
             switch error {
             case .technicalError:
                 self.showAlert(title: "Oops", message: error.label) {}
